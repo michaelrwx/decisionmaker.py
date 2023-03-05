@@ -1,21 +1,10 @@
-import time
 import random
 
+def decision_maker(): #defining the decision making function
+    choices = input("Enter your choices separated by commas: ")
+    choices_list = choices.split(",") #Splitting the commas will allow the program to read the input without commas
+    decision = random.choice(choices_list)
+    print("That's it! Your decision is:",decision)
 
-print("Let's make a decision...\n") #create suspense
-
-number = int(input("How many things are you comparing? \n")) #user input 
-
-strnum = str(number) #puts this decision in a variable
-
-print("You are deciding between " +strnum+ " things. The last thing is your decision.")
-time.sleep(1)
-
-print("Calculating Decision: ")
-
-for i in range(number):
-    decision = str(random.randrange(number) + 1) #We don't want 0's because that makes no sense to anyone else lol
-    print(decision) #honestly this is here to create more suspense
-    time.sleep(0.5) #makes the program look neat
-
-print("That's it! Your decision is: " +decision)
+print("Let's make a decision...") #create suspense
+decision_maker()
